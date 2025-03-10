@@ -98,7 +98,7 @@ function displayProducts(): void {
 
 const form = document.getElementById("product-form") as HTMLFormElement;
 form.addEventListener("submit", (event) => {
-  event.preventDefault(); 
+  
 
   
   const name = (document.getElementById("product-name") as HTMLInputElement).value;

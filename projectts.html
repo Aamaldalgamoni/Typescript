@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Form</title>
+    <style>
+        /* General reset and body styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Form styling */
+        #task-form {
+            background: linear-gradient(135deg, #6e7e9e, #4d5a6d);
+            padding: 30px;
+            border-radius: 12px;
+            margin-left:11.8vw;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            width: 100%;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+
+        #task-form label {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        #task-form input, #task-form select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            background-color: #fff;
+            color: #333;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #task-form input:focus, #task-form select:focus {
+            background-color: #f1f1f1;
+            transform: scale(1.05);
+            outline: none;
+        }
+
+        #task-form button {
+            background-color: #5eaf8a;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #task-form button:hover {
+            background-color: #4c9f76;
+        }
+
+        /* Task cards container */
+        #task-cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Task card styling */
+        .task-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .task-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .task-card h3 {
+            font-size: 1.4em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .task-card p {
+            font-size: 1em;
+            color: #666;
+            margin: 8px 0;
+        }
+
+        /* State label colors */
+        .todo {
+            color: #f39c12;
+        }
+
+        .doing {
+            color: #3498db;
+        }
+
+        .done {
+            color: #2ecc71;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            #task-form {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .task-card {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Task Form</h1>
+        <form id="task-form">
+            <label for="task-name">Title:</label>
+            <input type="text" id="task-name" required><br>
+
+            <label for="task-states">States:</label>
+            <select id="task-states" required>
+                <option value="todo">To Do</option>
+                <option value="doing">Doing</option>
+                <option value="done">Done</option>
+            </select><br>
+
+            <label for="task-start">Start Date:</label>
+            <input type="date" id="task-start" required><br>
+
+            <label for="task-end">End Date:</label>
+            <input type="date" id="task-end" required><br>
+
+            <button type="submit">Add Task</button>
+        </form>
+
+        <h2>Task List</h2>
+        <div id="task-cards-container"></div>
+    </div>
+
+    <script src="projectts.js"></script>
+</body>
+</html>
